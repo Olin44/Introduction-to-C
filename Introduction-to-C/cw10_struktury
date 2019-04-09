@@ -1,0 +1,113 @@
+//zapis struktur do pliku dodaj pozycje wyswietl po kolei wyswietl kolejny 
+#include <stdio.h>
+#include <stdlib.h>
+
+struct osoba
+{
+	char imie[20];
+	char nazwisko[30];
+	unsigned int wiek;
+};
+
+int odczyt(FILE *plik, struct osoba o);
+int zapis(FILE *plik, struct osoba o);
+int menu(FILE *plik, struct osoba o);
+int odczyt_pojedynczo(FILE *plik, struct osoba o);
+
+
+int main (void)
+{
+	struct osoba o;
+	FILE *plik;
+	menu(plik, o);
+	return 0;
+}
+
+int menu(FILE *plik, struct osoba o)
+{
+	int wybor = 0;
+	while(wybor <= 5)
+	{
+		printf("             MENU\n______________\n1. Wyswietl wszystkie rekordy z pliku.\n2. Dodaj nowy rekord.\n3. Przegladaj rekordy pokolei.\n4. Usun wszystkie rekordy.\n5. Zakoncz dzialanie programu.\n_____________\n"); scanf("%d", &wybor);
+		switch(wybor)
+		{
+			case 1:
+				odczyt(plik, o);
+				break;
+			case 2:
+				zapis(plik, o);
+				break;
+			case 3:
+				odczyt_pojedynczo(plik, o);
+				break;
+			case 4:
+				plik = fopen("wyniki.bin", "w");
+				break;
+			case 5:
+				return 0;
+		}
+	}
+}
+
+int zapis(FILE *plik, struct osoba o)
+{
+	int koniec = 0;
+	while(koniec != 1)
+	{
+		plik=fopen("wyniki.bin", "ab");
+		printf("\nPodaj nazwisko, imie i wiek: "); scanf("%s %s %u", o.imie, o.nazwisko, &o.wiek);
+		fwrite(&o, sizeof (o), 1, plik);
+		printf("\nJesli chcesz zakonczyc dodawanie rekordow wpisz 1, jesli nie kliknij dowolny klawisz.\n"); scanf("%d", &koniec);
+		fclose(plik);
+	}
+}
+
+int odczyt(FILE *plik, struct osoba o)
+{
+	int i = 1;
+	plik=fopen("wyniki.bin", "a+b");
+	
+	if(fscanf(plik, "%d", &i) == EOF)
+		printf("\nPlik jest pusty.\n\n");
+	else
+		printf("\nZawartosc pliku:\nNr Imie Nazwisko Wiek\n");
+	while(fscanf(plik, "%d", &i) != EOF )
+	{
+		fread(&o, sizeof (o), 1, plik);
+		printf ("%d. %s %s %u\n", i, o.imie, o.nazwisko, o.wiek);
+			if (feof(plik)) 
+			{
+				fclose(plik);
+				break;
+			}
+			else
+		i++;
+	}
+	printf("\n");	
+	return 0;
+	
+}
+int odczyt_pojedynczo(FILE *plik, struct osoba o)
+{
+	int n = 1, i = 1;
+	plik=fopen("wyniki.bin", "a+b");
+	
+	if(fscanf(plik, "%d", &i) == EOF)
+		printf("\nPlik jest pusty.\n\n");
+	printf("\nZawartosc pliku:");
+	while(fscanf(plik, "%d", &i) != EOF && n == 1)
+	{
+		if (feof(plik)) 
+			{
+				fclose(plik);
+				break;
+			}
+		printf("\nNr Imie Nazwisko Wiek\n");
+		fread(&o, sizeof (o), 1, plik);
+		printf ("%d. %s %s %u\n", i, o.imie, o.nazwisko, o.wiek);
+		printf("Kliknij 1, bo wczytac kolejny rekord."); scanf("%d", &n);
+		i++;
+	}
+	printf("\nPrzejrzales juz wszystkie rekordy!\n");	
+	return 0;
+}

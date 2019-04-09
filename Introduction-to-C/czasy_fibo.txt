@@ -1,0 +1,37 @@
+Czasy z rekrencyjnej wersji:
+30 wyraz fibo z to: 832040 Od startu zegara uplynelo 0.000000 sekund
+31 wyraz fibo z to: 1346269 Od startu zegara uplynelo 0.015000 sekund
+32 wyraz fibo z to: 2178309 Od startu zegara uplynelo 0.037000 sekund
+33 wyraz fibo z to: 3524578 Od startu zegara uplynelo 0.072000 sekund
+34 wyraz fibo z to: 5702887 Od startu zegara uplynelo 0.129000 sekund
+35 wyraz fibo z to: 9227465 Od startu zegara uplynelo 0.221000 sekund
+36 wyraz fibo z to: 14930352 Od startu zegara uplynelo 0.367000 sekund
+37 wyraz fibo z to: 24157817 Od startu zegara uplynelo 0.608000 sekund
+38 wyraz fibo z to: 39088169 Od startu zegara uplynelo 0.995000 sekund
+39 wyraz fibo z to: 63245986 Od startu zegara uplynelo 1.617000 sekund
+40 wyraz fibo z to: 102334155 Od startu zegara uplynelo 2.623000 sekund
+41 wyraz fibo z to: 165580141 Od startu zegara uplynelo 4.263000 sekund
+42 wyraz fibo z to: 267914296 Od startu zegara uplynelo 6.912000 sekund
+43 wyraz fibo z to: 433494437 Od startu zegara uplynelo 11.173000 sekund
+44 wyraz fibo z to: 701408733 Od startu zegara uplynelo 18.101000 sekund
+45 wyraz fibo z to: 1134903170 Od startu zegara uplynelo 29.268000 sekund
+46 wyraz fibo z to: 1836311903 Od startu zegara uplynelo 47.363998 sekund
+
+Czasy z iteracyjnej wersji:
+30 wyraz fibo z to: 832040 Od startu zegara uplynelo 0.000000 sekund
+31 wyraz fibo z to: 1346269 Od startu zegara uplynelo 0.000000 sekund
+32 wyraz fibo z to: 2178309 Od startu zegara uplynelo 0.000000 sekund
+33 wyraz fibo z to: 3524578 Od startu zegara uplynelo 0.000000 sekund
+34 wyraz fibo z to: 5702887 Od startu zegara uplynelo 0.000000 sekund
+35 wyraz fibo z to: 9227465 Od startu zegara uplynelo 0.001000 sekund
+36 wyraz fibo z to: 14930352 Od startu zegara uplynelo 0.001000 sekund
+37 wyraz fibo z to: 24157817 Od startu zegara uplynelo 0.001000 sekund
+38 wyraz fibo z to: 39088169 Od startu zegara uplynelo 0.001000 sekund
+39 wyraz fibo z to: 63245986 Od startu zegara uplynelo 0.001000 sekund
+40 wyraz fibo z to: 102334155 Od startu zegara uplynelo 0.001000 sekund
+41 wyraz fibo z to: 165580141 Od startu zegara uplynelo 0.001000 sekund
+42 wyraz fibo z to: 267914296 Od startu zegara uplynelo 0.001000 sekund
+43 wyraz fibo z to: 433494437 Od startu zegara uplynelo 0.001000 sekund
+44 wyraz fibo z to: 701408733 Od startu zegara uplynelo 0.001000 sekund
+45 wyraz fibo z to: 1134903170 Od startu zegara uplynelo 0.001000 sekund
+46 wyraz fibo z to: 1836311903 Od startu zegara uplynelo 0.001000 sekund
